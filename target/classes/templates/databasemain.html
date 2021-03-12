@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header">
+</header>
+<div class="container" style="padding-top: 6em">
+    <h1>Блог сайта</h1>
+    <div th:each="element : ${news}" class="alert alert-info mt-2">
+        <h3 th:text="${element.getName()}"></h3>
+        <p th:text="${element.getFulltext()}"></p>
+    </div>
+</div>
+</body>
+</html>
